@@ -1,4 +1,4 @@
-# import matplotlib.pyplot as plt
+import matplotlib.pyplot as plt
 import pulp
 import copy
 
@@ -56,28 +56,28 @@ def minimize_cost(prices,arrival_time,SOC, H):
     # print("Operation Schedule (1=operate, 0=not operate):", operation_schedule)
     print("Cost:", total_cost)
 
-    # fig, ax1 = plt.subplots()
+    fig, ax1 = plt.subplots()
 
-    # color = 'tab:red'
-    # ax1.set_xlabel('Time Slot')
-    # ax1.set_ylabel('Prices', color=color)
-    # ax1.plot(electricity_cost_clean, color=color)
-    # ax1.tick_params(axis='y', labelcolor=color)
-    # ax1.plot(electricity_cost_clean, color=color, label='Prices')
+    color = 'tab:red'
+    ax1.set_xlabel('Time Slot')
+    ax1.set_ylabel('Prices', color=color)
+    ax1.plot(electricity_cost_clean, color=color)
+    ax1.tick_params(axis='y', labelcolor=color)
+    ax1.plot(electricity_cost_clean, color=color, label='Prices')
 
 
-    # ax2 = ax1.twinx()  
-    # color = 'tab:blue'
-    # ax2.set_ylabel('Operation Schedule', color=color)  
-    # ax2.plot(operation_schedule, color=color)
-    # ax2.tick_params(axis='y', labelcolor=color)
-    # ax2.plot(operation_schedule, color=color, label='Optimal Charging Schedule')
-    # ax2.fill_between(range(len(operation_schedule)), operation_schedule, color='blue', alpha=0.25)
+    ax2 = ax1.twinx()  
+    color = 'tab:blue'
+    ax2.set_ylabel('Operation Schedule', color=color)  
+    ax2.plot(operation_schedule, color=color)
+    ax2.tick_params(axis='y', labelcolor=color)
+    ax2.plot(operation_schedule, color=color, label='Optimal Charging Schedule')
+    ax2.fill_between(range(len(operation_schedule)), operation_schedule, color='blue', alpha=0.25)
 
-    # fig.legend(loc="upper right")
+    fig.legend(loc="upper right")
 
-    # fig.tight_layout()  
-    # plt.show()
+    fig.tight_layout()  
+    plt.show()
 
 
     return total_cost

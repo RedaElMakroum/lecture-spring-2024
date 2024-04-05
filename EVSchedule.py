@@ -49,7 +49,7 @@ def minimize_cost(prices,arrival_time,SOC, H):
     # for i in range(21):
     #     problem += x[i+3] <= x[i]  # If operation starts at hour i, it must continue for the next 3 hours
     #     problem += x[i] <= x[i+1] + 1 - x[i+3]  # If operation does not continue to hour i+3, it must stop at hour i
-
+    problem.solve(pulp.PULP_CBC_CMD(msg=False))
     # Solve the problem
     problem.solve()
 
@@ -58,7 +58,7 @@ def minimize_cost(prices,arrival_time,SOC, H):
     total_cost = sum([operation_schedule[i] * electricity_cost[i] for i in time_slots])
 
     # print("Operation Schedule (1=operate, 0=not operate):", operation_schedule)
-    print("Total Electricity Cost ($):", total_cost)
+    print("Cost:", total_cost)
 
     # Plotting code remains the same
     fig, ax1 = plt.subplots()
@@ -85,7 +85,7 @@ def minimize_cost(prices,arrival_time,SOC, H):
     plt.show()
 
 
-    return operation_schedule
+    return total_cost
 
 # Call the function with the prices
 # minimize_cost(helper.prices)

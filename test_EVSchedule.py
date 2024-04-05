@@ -31,4 +31,6 @@ H = 14
 
 
 def test_minimize_cost():
-    assert minimize_cost(prices, arrival_time, 0, H) > 0
+    result = minimize_cost(prices, arrival_time, 0, H)
+    assert isinstance(result, (int, float))
+    assert result > 0

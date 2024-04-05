@@ -1,10 +1,6 @@
-import matplotlib.pyplot as plt
+# import matplotlib.pyplot as plt
 import pulp
 import copy
-
-arrival_time = 0
-prices = [50.23, 48.67, 46.55, 45.00, 43.89, 45.25, 47.60, 50.20, 55.30, 60.00, 62.75, 65.00, 68.20, 70.00, 72.30, 74.50, 76.80, 78.00, 77.25, 75.00, 73.50, 70.40, 68.20, 66.00]
-H = 14
 
 
 def minimize_cost(prices,arrival_time,SOC, H):
@@ -60,29 +56,28 @@ def minimize_cost(prices,arrival_time,SOC, H):
     # print("Operation Schedule (1=operate, 0=not operate):", operation_schedule)
     print("Cost:", total_cost)
 
-    # Plotting code remains the same
-    fig, ax1 = plt.subplots()
+    # fig, ax1 = plt.subplots()
 
-    color = 'tab:red'
-    ax1.set_xlabel('Time Slot')
-    ax1.set_ylabel('Prices', color=color)
-    ax1.plot(electricity_cost_clean, color=color)
-    ax1.tick_params(axis='y', labelcolor=color)
-    ax1.plot(electricity_cost_clean, color=color, label='Prices')
+    # color = 'tab:red'
+    # ax1.set_xlabel('Time Slot')
+    # ax1.set_ylabel('Prices', color=color)
+    # ax1.plot(electricity_cost_clean, color=color)
+    # ax1.tick_params(axis='y', labelcolor=color)
+    # ax1.plot(electricity_cost_clean, color=color, label='Prices')
 
 
-    ax2 = ax1.twinx()  
-    color = 'tab:blue'
-    ax2.set_ylabel('Operation Schedule', color=color)  
-    ax2.plot(operation_schedule, color=color)
-    ax2.tick_params(axis='y', labelcolor=color)
-    ax2.plot(operation_schedule, color=color, label='Optimal Charging Schedule')
-    ax2.fill_between(range(len(operation_schedule)), operation_schedule, color='blue', alpha=0.25)
+    # ax2 = ax1.twinx()  
+    # color = 'tab:blue'
+    # ax2.set_ylabel('Operation Schedule', color=color)  
+    # ax2.plot(operation_schedule, color=color)
+    # ax2.tick_params(axis='y', labelcolor=color)
+    # ax2.plot(operation_schedule, color=color, label='Optimal Charging Schedule')
+    # ax2.fill_between(range(len(operation_schedule)), operation_schedule, color='blue', alpha=0.25)
 
-    fig.legend(loc="upper right")
+    # fig.legend(loc="upper right")
 
-    fig.tight_layout()  
-    plt.show()
+    # fig.tight_layout()  
+    # plt.show()
 
 
     return total_cost
@@ -90,4 +85,4 @@ def minimize_cost(prices,arrival_time,SOC, H):
 # Call the function with the prices
 # minimize_cost(helper.prices)
 
-minimize_cost(prices, arrival_time, 0, H)
+

@@ -25,5 +25,11 @@ jobs:
     - name: Install dependencies
       run: pip install pytest
 
+    - name: Install dependencies
+      run: pip install pulp
+
+    - name: Install dependencies
+      run: pip install matplotlib
+    
     - name: Test with pytest
       run: pytest
